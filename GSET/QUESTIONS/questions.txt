@@ -7,7 +7,7 @@
     Can you walk through the code of that?
 
 3.  For the function, there is func_chirp and get_features but where is the in 
-    between where the user-influenced chirp signal is actually received? 
+    between where the user-influenced chirp signal is actually received/measured? 
 
 4. In Step 2 - Cross Correlation, what is the signal cross correlating with? Isn't there only
     the signal that is perceived by the microphone the only signal in the "system"
