@@ -2,6 +2,8 @@
     frequencies in the chirp. Is there an advantage to high spectral coherence in
     this scenario?
 
+    Gather a lot of data in a quick interval over one sitting. 
+
 2. I understand the general process of the project works but where specifically is 
     code where the microphone perceives the signal/audio?
 
@@ -12,15 +14,30 @@
     sample given in training data? Specifically, is it correct that this section is 
     trying to get the signal of the structure-borne signal independent of the airborne signal.
 
+        Cross correlation is used to determine the place in the signals that the structure-borne signal occurs 
+        since it is likely that the total recorded signal will include fragments that are airborne/not desirable 
+        in general. Since the frequency is constant throughout the different mediums, the cross correlation can
+        be done with the amplitude of the chirp signal as compared to the amplitude fluctuation of the structure-
+        borne signal. 
+
 5. Can the desired signal processing also be done using Fourier transform/analysis
     of the airborne sound vs. the structure-borne sound
+
+        This would be an ineffective method for decomposing the airborne and structure-borne waves because Fourier
+        transform is concerned with mapping a sinusoidal function from it's time domain to it's frequency domain. 
+        Since the frequency of the signal will not vary across mediums, there is no use for the Fourier Transform 
+        in this experiment. 
 
 6. Going into the actual specifics of the sound, is the chirp a pure frequency. 
     Are there any resources you could point me to in understanding how structure-borne
     propagation would effect that pure sound. 
+    
+        Yes, the chirp is a pure frequency that is swept up/down based on preference. The structure-borne propagation 
+        is therefore also a pure frequency. 
 
 7. Can you explain the graph made about the 3 different positions in your research 
     paper about the topic? 
 
-8. How exactly/what exactly are you calculating in Step 4 for calculation of variance, 
-    std, etc. Is it in terms of frequency? 
+        The euclidean distance in average amplitude in measurements taken of structure-borne sound propagating throughout
+        various mediums. The high contrast suggests that structure-borne sound could be an effective way of distinguishing 
+        users based on medium (hands). 
