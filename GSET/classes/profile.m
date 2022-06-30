@@ -31,4 +31,4 @@ classdef profile
 
 end
 
-% defining statistic properties
+% Sahil : defining statistic properties of each user interpretted by the microphone/calculated 

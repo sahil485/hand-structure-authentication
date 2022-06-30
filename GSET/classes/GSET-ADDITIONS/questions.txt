@@ -1,9 +1,0 @@
-1. The chirp refers to the signal that changes over time. Why is it beneficial to repeat
-    frequencies in the chirp. Is there an advantage to high spectral coherence in
-    this scenario
-
-2. I understand the general process of the project works but how specifically 
-    does the microphone receive the signal that is propogating through the hand. 
-    Can you walk through the code of that?
-
-3.  
