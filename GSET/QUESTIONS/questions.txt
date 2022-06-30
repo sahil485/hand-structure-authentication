@@ -1,17 +1,16 @@
 1. The chirp refers to the signal that changes over time. Why is it beneficial to repeat
     frequencies in the chirp. Is there an advantage to high spectral coherence in
-    this scenario
+    this scenario?
 
-2. I understand the general process of the project works but how specifically 
-    does the microphone receive the signal that is propogating through the hand. 
-    Can you walk through the code of that?
+2. I understand the general process of the project works but where specifically is 
+    code where the microphone perceives the signal/audio?
 
 3.  For the function, there is func_chirp and get_features but where is the in 
     between where the user-influenced chirp signal is actually received/measured? 
 
-4. In Step 2 - Cross Correlation, what is the signal cross correlating with? Isn't there only
-    the signal that is perceived by the microphone the only signal in the "system"
-    at the moment? Is it compared to the chirps first sent out on the speaker.
+4. In Step 2 - Cross Correlation, what is the signal cross correlating with? Is it the 
+    sample given in training data? Specifically, is it correct that this section is 
+    trying to get the signal of the structure-borne signal independent of the airborne signal.
 
 5. Can the desired signal processing also be done using Fourier transform/analysis
     of the airborne sound vs. the structure-borne sound
@@ -23,3 +22,5 @@
 7. Can you explain the graph made about the 3 different positions in your research 
     paper about the topic? 
 
+8. How exactly/what exactly are you calculating in Step 4 for calculation of variance, 
+    std, etc. Is it in terms of frequency? 
