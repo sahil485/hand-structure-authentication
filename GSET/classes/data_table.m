@@ -6,3 +6,5 @@ classdef data_table
    end
 
 end
+
+% Defining table architecture

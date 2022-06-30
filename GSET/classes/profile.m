@@ -30,3 +30,5 @@ classdef profile
    end
 
 end
+
+% defining statistic properties
