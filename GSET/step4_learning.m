@@ -19,8 +19,9 @@ chirps_for_train = 400; % this number should be a multiple of 10 b/c 10 chirps p
 master_data = []; % chirps_for_train * number of users = size of master_data
 
 for i = 1:length(person)
-% for i = 1:18
+   %for i = 1:18
     t_data = array2table(person(i).person.features()');
+    %disp(t_data)
     % We append to the features table the label of the person, i.e. P1
     % Cellstr repeats the label for some number of rows and 1 column
     p_label = array2table(cellstr(repmat(['P' num2str(i)],chirps_for_train,1)),'VariableNames',{'Person'});

@@ -2,9 +2,10 @@ clc; clear; close all;
 
 %% Set Parameters to Generate Signal
 fs = 48e3; % Sampling frequency (fs)
-freq_min = 19e3; freq_max = 22e3; % Min and max frequnecies to transmit
-
-freq_set = zeros(1,5); % Preallocate space for frequencies
+freq_min = 15e3; freq_max = 22e3; % Min and max frequnecies to transmit
+number = (freq_max - freq_min)/1e3 + 1;
+%disp(number)
+freq_set = zeros(1, number); % Preallocate space for frequencies
 freq_dex = 1; % Index counter for freq_set
 
 %% This loop creates set of frequencies of chirps
@@ -16,13 +17,13 @@ for i=freq_min:1e3:freq_max % Loop in steps of 1k
 end
 
 %% Parameters continued
-chirp_time = 0.025; % Single chirp duration in ms
+chirp_time = 0.025; % Single chirp duration in s
 window_len = 0.25; % Percentage of chirp to envelope (front and end)
 
 %number of chirp signals per frequency
 how_many_reps_per_freq = 2; % Choose 1 for no extra repetitions
 %number of frequency sweeps per file
-how_many_reps_per_signal = 4; % Choose 1 for no extra repetitions
+how_many_reps_per_signal = 5; % Choose 1 for no extra repetitions
 
 %% Create signal here
 [signal_full, signal_duplicate, starter_pilot] = ...

@@ -41,3 +41,13 @@
         The euclidean distance in average amplitude in measurements taken of structure-borne sound propagating throughout
         various mediums. The high contrast suggests that structure-borne sound could be an effective way of distinguishing 
         users based on medium (hands). 
+
+8. What is the point of using the complex conjugate transpose on the full signal before Cross Correlation, and then "undoing it" by 
+    reapplying the transpose at the end of extracting the desired signal. Was it easier to work with the data when the rows/columns were 
+    transposed?
+
+9. We have a general confusion with the function of the lag matrix returned by cross correlation between the two signals. What information 
+    specifically is stored within this variable and why is it used to reference the start of the signal in line 93 of Step 2?
+
+10. What is the need to segment each individual chirp after the signal has been determined to start. Is this for the data of each chirp to be 
+    in a specific, accessible format later on? 
