@@ -25,6 +25,16 @@ for i = 1:length(person)
     % We append to the features table the label of the person, i.e. P1
     % Cellstr repeats the label for some number of rows and 1 column
     p_label = array2table(cellstr(repmat(['P' num2str(i)],chirps_for_train,1)),'VariableNames',{'Person'});
+    
+    
+    l = height(t_data);
+    p = height(p_label);
+    disp('difference')
+    disp(l);
+    disp(p);
+    disp(l-p);
+
+
     table_test = label_table_data([t_data p_label]);
     
     master_data = [master_data; table_test]; 

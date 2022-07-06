@@ -3,7 +3,7 @@ clear; clc; close all;
 % Perform feature extraction on all user profiles in a given folder. Simply
 % provide the user ID for the files_num variable.
 
-files_num = 'p1';
+files_num = 'p2';
 files_dir = ['user_data/' files_num '/'];
 
 files = dir(files_dir);

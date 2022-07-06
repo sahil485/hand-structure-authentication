@@ -9,14 +9,14 @@ disp('Begin');
 % Set what audio file to use
 % Case and Glove settings should only go with Galaxy Device
 % Portrait and Landscape hands should only go with Tablet
-file_name = 'p2/Galaxy_Office_R';
+file_name = 'p1/Galaxy_Office_R';
 save_directory = 'user_data/';
 
 disp(['Processing ' file_name '.wav ...']);
 
 %% Set Parameters to Generate Signal
 fs = 48e3; % Sampling frequency (fs)
-freq_min = 19e3; freq_max = 22e3; % Min and max frequnecies to transmit
+freq_min = 18e3; freq_max = 22e3; % Min and max frequnecies to transmit
 
 %the frequency must be in a 5e3 kHz range because otherwise the length of
 %the array created with chirp_samples exceeds the maximum limit 
@@ -38,7 +38,7 @@ chirp_time = 0.025; % Single chirp duration in ms
 window_len = 0.25; % Percentage of chirp to envelope (front and end)
 
 how_many_reps_per_freq = 2; % Choose 1 for no extra repetitions
-how_many_reps_per_signal = 40; % Choose 1 for no extra repetitions
+how_many_reps_per_signal = 4; % Choose 1 for no extra repetitions
 
 [signal_full, signal_duplicate, pilot] = ...
     func_chirp_gen(fs, freq_set, chirp_time, window_len, ...
@@ -80,9 +80,6 @@ mic_a = bandpass(x(:,1), freq_range, fs);
 % returns the cross correlation matrix and the lags in the calculation 
 % when the cross correlation was being calculated, one signal is lagging
 % behind another at lag_a samples behind
-
-disp(1)
-disp(lag_a)
 
 % Normal Cross-correlation to find signal in recording
 try

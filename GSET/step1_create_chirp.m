@@ -2,7 +2,7 @@ clc; clear; close all;
 
 %% Set Parameters to Generate Signal
 fs = 48e3; % Sampling frequency (fs)
-freq_min = 15e3; freq_max = 22e3; % Min and max frequnecies to transmit
+freq_min = 18e3; freq_max = 22e3; % Min and max frequnecies to transmit
 number = (freq_max - freq_min)/1e3 + 1;
 %disp(number)
 freq_set = zeros(1, number); % Preallocate space for frequencies
