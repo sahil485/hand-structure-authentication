@@ -9,7 +9,7 @@ disp('Begin');
 % Set what audio file to use
 % Case and Glove settings should only go with Galaxy Device
 % Portrait and Landscape hands should only go with Tablet
-file_name = 'p1/Galaxy_Office_R';
+file_name = 'students/sahil/Left-5';
 save_directory = 'user_data/';
 
 disp(['Processing ' file_name '.wav ...']);
@@ -75,6 +75,7 @@ catch
     cc_counter = 1; %counter to track which proposed trim to use
     for j = 1:length(chirp_sig)
         z_start = lag_a(z(j)); %find the maximum of lag_a
+        disp(["z_start" z_start])
         z_ending = z_start+length(chirp_sig)-1;
         if z_ending < length(mic_a) && z_start > 0
             figure; plot(mic_a(z_start:z_ending));
@@ -87,7 +88,6 @@ catch
             end
         end
     end
-
     mic_a = mic_a(z_start:z_ending); % chirp extracted from file
     mic_a = mic_a(length(pilot)+1:end); % Remove pilot from front
     mic_a = mic_a';
@@ -95,7 +95,7 @@ end
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %
 % IMPORTANT - VERIFY THE PLOT OF THE FILTERED SIGNAL BELOW %
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %
-figure; plot(mic_a);
+%figure; plot(mic_a);
 
 
 %% Data structure for signals
@@ -158,6 +158,7 @@ person.samples = samples; person.samples_chirps = samples_chirps;
 if ~exist(save_directory, 'dir')
        mkdir(save_directory);
 end
+disp(person)
 save([save_directory file_name], 'person');
 
 %% End Program
