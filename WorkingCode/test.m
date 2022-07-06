@@ -1,5 +1,9 @@
-directions = ["Left" "Right"];
+directions = struct ;
 
-directions = [directions "Middle"];
+directions.a = "sheesha";
+directions.b = "sheeshb";
 
-directions
+
+
+disp(directions)
+

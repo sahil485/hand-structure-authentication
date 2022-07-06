@@ -3,11 +3,23 @@ clc; clear; close all;
 time_start = cputime;
 %% Set Parameters
 
-
 p1a = load('p1/Galaxy_Office_L.mat');
 p2a = load('p2/Galaxy_Office_L.mat');
 p1b = load('p1/Galaxy_Office_R.mat');
 p2b = load('p2/Galaxy_Office_R.mat');
+
+people = ["alexei" "reva" "dani" "sahil" "david"];
+direction = ["Left" "Right"];
+files = [];
+
+for i=1:1:length(people)
+    for j=1:1:5
+       for k=1:1:2
+            p = load(strcat("students", people(i), "/", direction(k), "-", j));
+            files = [files p];
+       end
+    end
+end
 
 % Load Data First if Workspace Cleared
 person = [p1a p2a ...

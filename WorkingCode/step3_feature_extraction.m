@@ -6,9 +6,14 @@ clear; clc; close all;
 files_num = 'p2';
 files_dir = ['user_data/' files_num '/'];
 
+disp(files_dir)
+
 files = dir(files_dir);
 files = {files(3:end).name}';
+disp(files)
 files = string(files);
+
+disp(length(files));
 
 for i=1:length(files)
     disp(['(' num2str(i) '/' num2str(length(files)) ...

@@ -1,13 +1,13 @@
 clear; clc; close all;
 directions = ["Left" "Right"];
-people = ["alexei" "benson" "reva" "dani" "sahil" "david"];
+people = ["alexei" "reva" "dani" "sahil" "david"];
 numbers = ["1" "2" "3" "4" "5"];
 
 unprocessed = [];
 
 for i=1:1:5
     for j=1:1:2
-        for k=1:1:6
+        for k=1:1:5
             % Given an audio file of a person's holding behavior, extract the sequence
             % from file by cross correlation. The sequence is then divided by number of
             % chirp repetitions and then further by individual chirps. 

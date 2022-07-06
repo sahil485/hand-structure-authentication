@@ -9,7 +9,7 @@ disp('Begin');
 % Set what audio file to use
 % Case and Glove settings should only go with Galaxy Device
 % Portrait and Landscape hands should only go with Tablet
-file_name = 'students/sahil/Left-5';
+file_name = 'students/sahil/Right-2';
 save_directory = 'user_data/';
 
 disp(['Processing ' file_name '.wav ...']);
