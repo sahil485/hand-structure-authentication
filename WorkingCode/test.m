@@ -1,9 +1,2 @@
-directions = struct ;
-
-directions.a = "sheesha";
-directions.b = "sheeshb";
-
-
-
-disp(directions)
-
+name = strcat("Name","Date","Color");
+figure("Name", name);

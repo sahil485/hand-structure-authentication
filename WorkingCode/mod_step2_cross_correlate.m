@@ -26,7 +26,7 @@ for i=1:1:5
             
             %% Set Parameters to Generate Signal
             fs = 48e3; % Sampling frequency (fs)
-            freq_min = 18e3; freq_max = 22e3; % Min and max frequnecies to transmit
+            freq_min = 18e3; freq_max = 22e3; % Min and max frequencies to transmit
             
             freq_set = zeros(1,5); % Preallocate space for frequencies
             freq_dex = 1; % Index counter for freq_set
@@ -66,7 +66,9 @@ for i=1:1:5
             mic_a = bandpass(x(:,1), freq_range, fs);
             
             [acor_a, lag_a] = xcorr(mic_a, chirp_sig);
-            
+            %lag_a records the amount of time the signal in mic_a is behind
+            %the signal in chirp_sig
+
             % Normal Cross-correlation to find signal in recording
             try
                 [~,Ia] = max(abs(acor_a)); % Find the index of max value in autocorr
@@ -74,8 +76,12 @@ for i=1:1:5
                 mic_a = mic_a(start:start+length(chirp_sig)-1); % chirp extracted from file
                 mic_a = mic_a(length(pilot)+1:end); % Remove pilot from front
             
-                mic_a = mic_a';
-            
+                if k==5
+                    figure("Name", strcat(people(k)," ", directions(j), " ", string(numbers(i))));
+                    plot(mic_a);
+                    plottools('on');
+                    mic_a = mic_a';
+                end
             % If cross_correlation overestimates the start point, try to find next best
             % starting point. There should be no 'tail' at the end of the plot of mic.
             catch
@@ -176,7 +182,6 @@ for i=1:1:5
             if ~exist(save_directory, 'dir')
                    mkdir(save_directory);
             end
-            disp(strcat(save_directory, file_name, ".mat"));
             save(strcat(save_directory, file_name), 'person');
             
             %% End Program
@@ -186,3 +191,4 @@ for i=1:1:5
 end
 
 disp(unprocessed)
+disp("Done")
