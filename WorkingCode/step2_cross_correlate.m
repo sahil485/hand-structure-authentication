@@ -9,10 +9,11 @@ disp('Begin');
 % Set what audio file to use
 % Case and Glove settings should only go with Galaxy Device
 % Portrait and Landscape hands should only go with Tablet
-file_name = 'p1/Galaxy_Office_R';
+file_name = 'students/reva/Left-5';
 save_directory = 'user_data/';
+read_directory = 'recordings/';
 
-disp(['Processing ' file_name '.wav ...']);
+disp(['Processing ' file_name '.wav']);
 
 %% Set Parameters to Generate Signal
 fs = 48e3; % Sampling frequency (fs)
@@ -30,7 +31,7 @@ for i=freq_min:1e3:freq_max % Loop in steps of 1k
 end
 
 %% Parameters continued
-chirp_time = 0.025; % Single chirp duration in ms
+chirp_time = 0.025; % Single chirp duration in s
 window_len = 0.25; % Percentage of chirp to envelope (front and end)
 
 how_many_reps_per_freq = 2; % Choose 1 for no extra repetitions
@@ -45,12 +46,12 @@ chirp_sig = signal_full'; freq_range = [freq_set(1), freq_set(end)];
 % Possible to skip all code above using this line below, but some variables
 % calculated above are useful
 % chirp_sig = audioread('chirp_18khzto22khz_48khzfs_25ms_repeat2.wav');
-
+disp(strcat(file_name))
 
 %% Cross Correlation to find signal in recording
 disp('Filtering...');
 
-[x,~] = audioread([file_name '.wav']); % read sequence from filename
+[x,~] = audioread(strcat([read_directory file_name '.wav'])); % read sequence from filename
 
 mic_a = bandpass(x(:,1), freq_range, fs);
 
@@ -62,7 +63,7 @@ try
     start = lag_a(Ia);
 
     mic_a = mic_a(start:start+length(chirp_sig)-1); % chirp extracted from file
-    mic_a = mic_a(length(pilot)+1:end); % Remove pilot from front
+    %mic_a = mic_a(length(pilot)+1:end); % Remove pilot from front
 
     mic_a = mic_a';
 
@@ -95,7 +96,10 @@ end
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %
 % IMPORTANT - VERIFY THE PLOT OF THE FILTERED SIGNAL BELOW %
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %
+
+
 figure; plot(mic_a);
+plottools('on')
 
 
 %% Data structure for signals

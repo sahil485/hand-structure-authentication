@@ -2,16 +2,28 @@ clc; clear; close all;
 
 time_start = cputime;
 %% Set Parameters
+recordings_per_person = 1;
 
+p1a = load('students/sahil/Left-1.mat');
+%p1b = load('students/sahil/Left-2.mat');
+%p1c = load('students/sahil/Left-3.mat');
+%p1d = load('students/sahil/Left-4.mat');
 
-p1a = load('p1/Galaxy_Office_L.mat');
-p2a = load('p2/Galaxy_Office_L.mat');
-p1b = load('p1/Galaxy_Office_R.mat');
-p2b = load('p2/Galaxy_Office_R.mat');
+p2a = load('students/david/Left-2.mat');
+%p2b = load('students/david/Left-3.mat');
+%p2c = load('students/david/Left-4.mat');
+%p2d = load('students/david/Left-5.mat');
+
+p3a = load('students/reva/Left-1.mat');
+%p3b = load('students/reva/Left-2.mat');
+%p3c = load('students/reva/Left-3.mat');
+%p3d = load('students/reva/Left-4.mat');
+%p3e = load('students/reva/Left-5.mat');
 
 % Load Data First if Workspace Cleared
-person = [p1a p2a ...
-          p1b p2b ];
+person = [p1a ... 
+    p2a ...
+    p3a];
 %% Create table for user samples
 % Based on experiment parameters, maximum 400 sampled chirps per person
 chirps_for_train = 400; % this number should be a multiple of 10 b/c 10 chirps per sample
@@ -23,10 +35,17 @@ for i = 1:length(person)
     t_data = array2table(person(i).person.features()');
     % We append to the features table the label of the person, i.e. P1
     % Cellstr repeats the label for some number of rows and 1 column
-    p_label = array2table(cellstr(repmat(['P' num2str(i)],chirps_for_train,1)),'VariableNames',{'Person'});
+    p_label = array2table(cellstr(repmat(['P' num2str(floor((i-1) / recordings_per_person) + 1)],chirps_for_train,1)),'VariableNames',{'Person'});
     table_test = label_table_data([t_data p_label]);
     
-    master_data = [master_data; table_test]; 
+    master_data = [master_data; table_test];
+
+end
+% MY CODE; grouping people together
+
+for i = 1:height(master_data)
+    %disp(master_data.Person{i}(2))
+    %master_data.Person{i} = strcat('P', string(mod(master_data.Person{i}(2), 4)));
 end
 
 disp('Compiled Master Data');

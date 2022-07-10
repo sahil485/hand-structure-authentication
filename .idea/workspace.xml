@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e10ff7de-cf30-4876-805a-064a7ea8574b" name="Changes" comment="" />
+    <list default="true" id="e10ff7de-cf30-4876-805a-064a7ea8574b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GSET/step2_cross_correlate.m" beforeDir="false" afterPath="$PROJECT_DIR$/GSET/step2_cross_correlate.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GSET/user_data/p1/Galaxy_Office_R.mat" beforeDir="false" afterPath="$PROJECT_DIR$/GSET/user_data/p1/Galaxy_Office_R.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkingCode/recordings/students/alexei/Left-1.wav" beforeDir="false" afterPath="$PROJECT_DIR$/WorkingCode/recordings/students/alexei/Left-1.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkingCode/recordings/students/alexei/Right-2.wav" beforeDir="false" afterPath="$PROJECT_DIR$/WorkingCode/recordings/students/alexei/Right-2.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkingCode/recordings/students/alexei/Right-3.wav" beforeDir="false" afterPath="$PROJECT_DIR$/WorkingCode/recordings/students/alexei/Right-3.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkingCode/recordings/students/alexei/Right-4.wav" beforeDir="false" afterPath="$PROJECT_DIR$/WorkingCode/recordings/students/alexei/Right-4.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkingCode/recordings/students/alexei/Right-5.wav" beforeDir="false" afterPath="$PROJECT_DIR$/WorkingCode/recordings/students/alexei/Right-5.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkingCode/step2_cross_correlate.m" beforeDir="false" afterPath="$PROJECT_DIR$/WorkingCode/step2_cross_correlate.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkingCode/step3_feature_extraction.m" beforeDir="false" afterPath="$PROJECT_DIR$/WorkingCode/step3_feature_extraction.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkingCode/step4_learning.m" beforeDir="false" afterPath="$PROJECT_DIR$/WorkingCode/step4_learning.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkingCode/user_data/p1/Galaxy_Office_L.mat" beforeDir="false" afterPath="$PROJECT_DIR$/WorkingCode/user_data/p1/Galaxy_Office_L.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkingCode/user_data/p1/Galaxy_Office_R.mat" beforeDir="false" afterPath="$PROJECT_DIR$/WorkingCode/user_data/p1/Galaxy_Office_R.mat" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,5 +49,8 @@
       <updated>1656524980740</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
