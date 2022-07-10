@@ -36,10 +36,14 @@ for i = 1:length(freq_set)
 %     figure; plot(chirp_samples_new, signal_tail);
 %     figure; spectrogram(signal_tail,[],[],[],freq_sam,'power','yaxis'); 
     
+%     disp(how_many_reps_per_freq)
     for j = 1:how_many_reps_per_freq-1 %% Consecutive chirps may have the same frequency
         signal_tail = [signal_tail signal_tail];
     end
+%     disp(signal_tail);
     signal_full = [signal_full signal_tail];
+%     disp(signal_full)
+%     disp(['signal full', signal_full]);
 end
 
 %% Duplicate the repeating chirp signal, to make experiments faster
@@ -62,5 +66,6 @@ end
 zeros(1, length(starter_pilot));
 signal_full = [starter_pilot zeros(1, length(starter_pilot)) signal_full];
 
+% disp(signal_full)
 
 end

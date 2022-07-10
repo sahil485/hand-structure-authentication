@@ -1,2 +1,3 @@
-name = strcat("Name","Date","Color");
-figure("Name", name);
+array = [1 2 3];
+string = [string array];
+disp(string)

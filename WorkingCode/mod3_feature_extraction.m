@@ -8,7 +8,6 @@ numbers = ["1" "2" "3" "4" "5"];
 % provide the user ID for the files_num variable.
 
 for c=1:1:5
-    disp([people(c)])
     files_dir = strcat("user_data/students/", people(c), "/");
 %         file_name = strcat("students/", people(k), "/", directions(j), "-", numbers(i));
 %         save_directory = 'user_data/';
@@ -42,6 +41,10 @@ for c=1:1:5
             person.fbe, person.frames ...
             ] = get_features(person.samples_chirps');
         
+%         disp(person.samples);
+%         figure("Name", strcat(files_dir, files(i))); plot( [, person.samples);
+            disp(size(person.samples))
+
         person.features = [...
             person.average; person.std; ...
             person.max; person.min; ...

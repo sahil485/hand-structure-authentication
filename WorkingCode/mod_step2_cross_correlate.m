@@ -18,7 +18,7 @@ for i=1:1:5
             % Case and Glove settings should only go with Galaxy Device
             % Portrait and Landscape hands should only go with Tablet
             %'students/alexei/Right-1' 
-            disp([people(k) directions(j) numbers(i)])
+            disp([people(k) directions(j) numbers(i)]);
             file_name = strcat("students/", people(k), "/", directions(j), "-", numbers(i));
             save_directory = 'user_data/';
             
@@ -44,7 +44,7 @@ for i=1:1:5
             window_len = 0.25; % Percentage of chirp to envelope (front and end)
             
             how_many_reps_per_freq = 2; % Choose 1 for no extra repetitions
-            how_many_reps_per_signal = 40; % Choose 1 for no extra repetitions
+            how_many_reps_per_signal = 4; % Choose 1 for no extra repetitions
             
             [signal_full, signal_duplicate, pilot] = ...
                 func_chirp_gen(fs, freq_set, chirp_time, window_len, ...
@@ -73,15 +73,12 @@ for i=1:1:5
             try
                 [~,Ia] = max(abs(acor_a)); % Find the index of max value in autocorr
                 start = lag_a(Ia);
+                disp(["index" string(start)]);
                 mic_a = mic_a(start:start+length(chirp_sig)-1); % chirp extracted from file
                 mic_a = mic_a(length(pilot)+1:end); % Remove pilot from front
             
-                if k==5
-                    figure("Name", strcat(people(k)," ", directions(j), " ", string(numbers(i))));
-                    plot(mic_a);
-                    plottools('on');
-                    mic_a = mic_a';
-                end
+                mic_a = mic_a';
+                
             % If cross_correlation overestimates the start point, try to find next best
             % starting point. There should be no 'tail' at the end of the plot of mic.
             catch
@@ -116,12 +113,15 @@ for i=1:1:5
                 end
                 
             end
+
+            disp(["max" max(abs(mic_a))])
+
             % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %
             % IMPORTANT - VERIFY THE PLOT OF THE FILTERED SIGNAL BELOW %
             % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %
-            %figure; plot(mic_a);
-            
-            
+            figure("Name", strcat(people(k)," ", directions(j), " ", string(numbers(i)))); plot(mic_a);
+            saveas(gcf, strcat("graphs/", people(k), "/", directions(j), "-", numbers(i)));
+
             %% Data structure for signals
             disp('Segmenting chirp chains...');
             % Main output are the samples and samples_chirps variables

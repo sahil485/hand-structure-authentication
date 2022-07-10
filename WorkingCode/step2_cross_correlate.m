@@ -9,7 +9,7 @@ disp('Begin');
 % Set what audio file to use
 % Case and Glove settings should only go with Galaxy Device
 % Portrait and Landscape hands should only go with Tablet
-file_name = 'students/sahil/Right-2';
+file_name = 'students/david/Left-1';
 save_directory = 'user_data/';
 
 disp(['Processing ' file_name '.wav ...']);
@@ -34,7 +34,7 @@ chirp_time = 0.025; % Single chirp duration in ms
 window_len = 0.25; % Percentage of chirp to envelope (front and end)
 
 how_many_reps_per_freq = 2; % Choose 1 for no extra repetitions
-how_many_reps_per_signal = 40; % Choose 1 for no extra repetitions
+how_many_reps_per_signal = 4; % Choose 1 for no extra repetitions
 
 [signal_full, signal_duplicate, pilot] = ...
     func_chirp_gen(fs, freq_set, chirp_time, window_len, ...
@@ -75,7 +75,6 @@ catch
     cc_counter = 1; %counter to track which proposed trim to use
     for j = 1:length(chirp_sig)
         z_start = lag_a(z(j)); %find the maximum of lag_a
-        disp(["z_start" z_start])
         z_ending = z_start+length(chirp_sig)-1;
         if z_ending < length(mic_a) && z_start > 0
             figure; plot(mic_a(z_start:z_ending));
@@ -95,8 +94,15 @@ end
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %
 % IMPORTANT - VERIFY THE PLOT OF THE FILTERED SIGNAL BELOW %
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %
-%figure; plot(mic_a);
-
+% figure(1); plot(get_chirp_interval(1,mic_a));
+% figure(2); plot(get_chirp_interval(2,mic_a);
+disp(length(mic_a));
+% chirp_num = 1;
+% [chirp] = get_chirp_interval(chirp_num, mic_a);
+% figure('Name', strcat("Chirp #", string(chirp_num)), 'NumberTitle', 'off'); plot(chirp)
+% saveas(gcf, 'graphs/alexei/barchart.png');
+figure(); plot(mic_a);
+saveas(gcf, 'graphs/')
 
 %% Data structure for signals
 disp('Segmenting chirp chains...');
@@ -150,7 +156,7 @@ for j = 1:samples_num
     end
 end
 
-%% Save Filtered Signal Data
+% Save Filtered Signal Data
 disp('Saving Data...');
 
 person = profile;
@@ -158,7 +164,6 @@ person.samples = samples; person.samples_chirps = samples_chirps;
 if ~exist(save_directory, 'dir')
        mkdir(save_directory);
 end
-disp(person)
 save([save_directory file_name], 'person');
 
 %% End Program
