@@ -9,11 +9,13 @@ disp('Begin');
 % Set what audio file to use
 % Case and Glove settings should only go with Galaxy Device
 % Portrait and Landscape hands should only go with Tablet
-file_name = 'students/reva/Left-5';
-save_directory = 'user_data/';
-read_directory = 'recordings/';
+file_name = 'Reva/Right (2)';
+save_directory = 'user_data/new_data/';
+read_directory = 'recordings/NewData/';
 
 disp(['Processing ' file_name '.wav']);
+
+
 
 %% Set Parameters to Generate Signal
 fs = 48e3; % Sampling frequency (fs)
