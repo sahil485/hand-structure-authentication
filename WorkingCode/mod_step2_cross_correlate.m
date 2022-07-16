@@ -1,12 +1,13 @@
 clear; clc; close all;
-directions = ["Left" "Right"];
-people = ["alexei" "reva" "dani" "sahil" "david"];
+
+directions = "Right";
+people = ["Alexei" "Reva" "Dani" "Sahil" "David"];
 numbers = ["1" "2" "3" "4" "5"];
 
 unprocessed = [];
 
 for i=1:1:5
-    for j=1:1:2
+    for j=1:1:1
         for k=1:1:5
             % Given an audio file of a person's holding behavior, extract the sequence
             % from file by cross correlation. The sequence is then divided by number of
@@ -19,7 +20,7 @@ for i=1:1:5
             % Portrait and Landscape hands should only go with Tablet
             %'students/alexei/Right-1' 
             disp([people(k) directions(j) numbers(i)]);
-            file_name = strcat("students/", people(k), "/", directions(j), "-", numbers(i));
+            file_name = strcat("data/", people(k), "/", directions(j), "-", numbers(i));
             save_directory = 'user_data/';
             
             disp(['Processing ' file_name '.wav ...']);
@@ -116,11 +117,13 @@ for i=1:1:5
 
             disp(["max" max(abs(mic_a))])
 
+
             % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %
             % IMPORTANT - VERIFY THE PLOT OF THE FILTERED SIGNAL BELOW %
             % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %
             figure("Name", strcat(people(k)," ", directions(j), " ", string(numbers(i)))); plot(mic_a);
             saveas(gcf, strcat("graphs/", people(k), "/", directions(j), "-", numbers(i)));
+
 
             %% Data structure for signals
             disp('Segmenting chirp chains...');
@@ -177,8 +180,11 @@ for i=1:1:5
             %% Save Filtered Signal Data
             disp('Saving Data...');
             
+            disp(['samples' length(samples_chirps(1))])
+
             person = profile;
-            person.samples = samples; person.samples_chirps = samples_chirps;
+            person.samples = samples; 
+            person.samples_chirps = samples_chirps;
             if ~exist(save_directory, 'dir')
                    mkdir(save_directory);
             end

@@ -1,4 +1,5 @@
 clear; clc; close all;
+
 directions = ["Left" "Right"];
 people = ["alexei" "reva" "dani" "sahil" "david"];
 numbers = ["1" "2" "3" "4" "5"];
@@ -43,7 +44,7 @@ for c=1:1:5
         
 %         disp(person.samples);
 %         figure("Name", strcat(files_dir, files(i))); plot( [, person.samples);
-            disp(size(person.samples))
+%           disp(size(person.samples))
 
         person.features = [...
             person.average; person.std; ...
