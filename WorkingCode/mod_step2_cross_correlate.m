@@ -44,12 +44,12 @@ for i=1:1:5
             chirp_time = 0.025; % Single chirp duration in ms
             window_len = 0.25; % Percentage of chirp to envelope (front and end)
             
-            how_many_reps_per_freq = 2; % Choose 1 for no extra repetitions
-            how_many_reps_per_signal = 4; % Choose 1 for no extra repetitions
+            reps_per_freq = 2; % Choose 1 for no extra repetitions
+            reps_per_signal = 4; % Choose 1 for no extra repetitions
             
             [signal_full, signal_duplicate, pilot] = ...
                 func_chirp_gen(fs, freq_set, chirp_time, window_len, ...
-                how_many_reps_per_freq, how_many_reps_per_signal);
+                reps_per_freq, reps_per_signal);
             
             %% Final signal for cross correlation
             chirp_sig = signal_full'; freq_range = [freq_set(1), freq_set(end)];
