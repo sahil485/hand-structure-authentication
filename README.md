@@ -46,5 +46,9 @@ In order to run the code in the repository, it is necessary to install the follo
 * Start a new learning session by loading your desired workspace data (master_data created by learning.m)
 * Models were developed by experimenting with different architectures and modifying false validation costs to help the models specialize for different authentication scenarios
 
+### Android Mobile Device
+* Voice recording software
+* "" file from transmissions in a .wav format
+
 ## Authors: 
 ### Sahil Chatiwala, Reva Hajarnis, Alexei Korolev, Danielle Park, David Shenkerman, Dr. Yingying Chen, and Yilin Yang (PhD Student)
