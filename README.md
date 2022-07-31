@@ -48,7 +48,7 @@ In order to run the code in the repository, it is necessary to install the follo
 
 ### Android Mobile Device
 * Voice recording software
-* "" file from transmissions in a .wav format
+* "chirp_18khzto22khz_48khzfs_25ms_repeat40.wav" file from transmissions folder saved as a .wav file
 
 ## Authors: 
 ### Sahil Chatiwala, Reva Hajarnis, Alexei Korolev, Danielle Park, David Shenkerman, Dr. Yingying Chen, and Yilin Yang (PhD Student)
