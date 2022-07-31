@@ -1,8 +1,6 @@
 Repository for "A Hand Structure-Based Mobile Authentication Solution to the Security-Reliability Trade-off" Paper
 
-Paper and Code by: Sahil Chatiwala(*), Reva Hajarnis(*), Alexei Korolev(*), Danielle Park(*), David Shenkerman(*), Dr. Yingying Chen(**), and Yilin Yang(**)
-* - Student Researchers at the Governor’s School of New Jersey Program in Engineering and Technology 2022
-** - Rutgers University Affiliated Faculty and Students
+Paper and Code by: Sahil Chatiwala, Reva Hajarnis, Alexei Korolev, Danielle Park, David Shenkerman, Dr. Yingying Chen, and Yilin Yang (PhD Student)
 
 FOLDERS
 * classes: contains data structures to organize data
