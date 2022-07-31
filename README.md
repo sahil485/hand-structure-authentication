@@ -5,15 +5,17 @@
 ### Folders:
 * classes: contains data structures to organize data
 * functions: contains functions to calculate signal information
+* graphs: contains MATLAB figures for transmissions, signals, segments, and chirps of each subject
 * recordings: contains audio files from user authentication experiments, subfolders for individual users
 * transmissions: contains chirp audio files transmitted by mobile device
-* user_data: contains matlab variable files storing features for each user
 
 ### Classes:
 * profile.m: structure for user data, holds user-influenced chirp signal and features extracted
 
 ### Functions:
+* create_graphs_from_mats.m: creates graphs of segmented chirps based on array index range specified as parameters
 * func_chirp_gen.m: generates chirp signal based on parameters provided to it
+* get_chirp_interval.m: returns array indices of the nth chirp specified as a parameter; used with create_graphs_mats.m
 * get_features: calculates time domain features when given user-influenced chirp signal
 * get_freq_data: calculates frequency domain features such as mfcc, called by get_features
 * mfcc.m: calculates mfcc variables
