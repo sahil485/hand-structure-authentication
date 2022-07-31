@@ -32,3 +32,4 @@
 * In MATLAB, open the APPS tab at the top of the screen
 * Click the Classification Learner icon (looks like bunch of red and blue dots)
 * Start a new learning session by loading your desired workspace data (master_data created by learning.m)
+* Models were developed by experimenting with different architectures and modifying false validation costs to help the models specialize for different authentication scenarios
