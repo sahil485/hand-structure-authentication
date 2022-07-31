@@ -1,6 +1,6 @@
-Repository for "A Hand Structure-Based Mobile Authentication Solution to the Security-Reliability Trade-off" Paper
+##Repository for "A Hand Structure-Based Mobile Authentication Solution to the Security-Reliability Trade-off" Paper
 
-Paper and Code by: Sahil Chatiwala, Reva Hajarnis, Alexei Korolev, Danielle Park, David Shenkerman, Dr. Yingying Chen, and Yilin Yang (PhD Student)
+#Paper and Code by: Sahil Chatiwala, Reva Hajarnis, Alexei Korolev, Danielle Park, David Shenkerman, Dr. Yingying Chen, and Yilin Yang (PhD Student)
 
 FOLDERS
 * classes: contains data structures to organize data
