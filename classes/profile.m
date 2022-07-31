@@ -29,6 +29,10 @@ classdef profile
       frames
    end
 
+<<<<<<< HEAD
 end
 
 % Sahil : defining statistic properties of each user interpretted by the microphone/calculated 
+=======
+end
+>>>>>>> sahil

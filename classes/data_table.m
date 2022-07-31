@@ -5,6 +5,10 @@ classdef data_table
       table_x
    end
 
+<<<<<<< HEAD
 end
 
 % Sahil : Defining table architecture
+=======
+end
+>>>>>>> sahil

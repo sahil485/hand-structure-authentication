@@ -2,6 +2,7 @@ clc; clear; close all;
 
 time_start = cputime;
 %% Set Parameters
+<<<<<<< HEAD
 
 
 p1a = load('p1/Galaxy_Office_L.mat');
@@ -12,6 +13,27 @@ p2b = load('p2/Galaxy_Office_R.mat');
 % Load Data First if Workspace Cleared
 person = [p1a p2a ...
           p1b p2b ];
+=======
+people = ["alexei" "reva" "dani" "sahil" "david"];
+direction = ["Left" "Right"];
+files = [];
+
+for i=1:1:length(people)
+    for j=1:1:5
+       for k=1:1:2
+           try
+                p = load(strcat("students/", people(i), "/", direction(k), "-", string(j)));
+                files = [files p];
+           catch
+               continue
+           end
+       end
+    end
+end
+
+% Load Data First if Workspace Cleared
+person = files;
+>>>>>>> sahil
 %% Create table for user samples
 % Based on experiment parameters, maximum 400 sampled chirps per person
 chirps_for_train = 400; % this number should be a multiple of 10 b/c 10 chirps per sample
@@ -19,6 +41,7 @@ chirps_for_train = 400; % this number should be a multiple of 10 b/c 10 chirps p
 master_data = []; % chirps_for_train * number of users = size of master_data
 
 for i = 1:length(person)
+<<<<<<< HEAD
    %for i = 1:18
     t_data = array2table(person(i).person.features()');
     %disp(t_data)
@@ -35,6 +58,13 @@ for i = 1:length(person)
     disp(l-p);
 
 
+=======
+% for i = 1:18
+    t_data = array2table(person(i).person.features()');
+    % We append to the features table the label of the person, i.e. P1
+    % Cellstr repeats the label for some number of rows and 1 column
+    p_label = array2table(cellstr(repmat(['P' num2str(i)],chirps_for_train,1)),'VariableNames',{'Person'});
+>>>>>>> sahil
     table_test = label_table_data([t_data p_label]);
     
     master_data = [master_data; table_test]; 
