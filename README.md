@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# TouchBasedAuth
-=======
-# "A Hand Structure-Based Mobile Authentication Solution to the Security-Reliability Trade-off"
+"A Hand Structure-Based Mobile Authentication Solution to the Security-Reliability Trade-off"
 
 ![process_overview](https://user-images.githubusercontent.com/46851548/182037972-a9516586-ae5d-4741-8e74-31745836560d.png)
 
@@ -57,4 +54,3 @@ In order to run the code in the repository, it is necessary to install the follo
 
 ## Authors: 
 Sahil Chatiwala, Reva Hajarnis, Alexei Korolev, Danielle Park, David Shenkerman, Dr. Yingying Chen, and Yilin Yang (PhD Student)
->>>>>>> sahil
