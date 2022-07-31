@@ -2,6 +2,8 @@
 
 Hand structure-based mobile authentication is a viable alternative to current mobile authentication techniques due to its incorporation of security, reliability, privacy and convenience. With privacy and convenience inherent to this mode of authentication, the research leverages hand biometrics and the K-Nearest Neighbors, Support Vector Machines, and Bagged Decision Trees machine learning algorithms to examine the security-reliability trade-off. The results show that there are statistically significant properties present in structure-borne signals that enable differentiation between individuals and hand positions. The repository includes code for data collection, preprocessing, and analysis. It also includes zip files for the models developed during research. 
 
+##Repository Structure:
+
 ### Folders:
 * classes: contains data structures to organize data
 * functions: contains functions to calculate signal information
@@ -22,6 +24,14 @@ Hand structure-based mobile authentication is a viable alternative to current mo
 * trifbank.m: used by mfcc.m
 * vec2frames.m: used by mfcc.m
 
+### Steps for Model Development and Authentication:
+* Step 1: create_chirp.m: choose what type of chirp signal to create, saves .wav file
+* Step 2: cross_correlate.m: select audio file from audio folder and extract user-influenced signal from recording, creates profile
+* Step 3: feature_extraction.m: given user profile, calculate the features, saves user data into profile
+* Step 4: learning.m: compiles all desired profiles into one data structure for Classification Learner's Application
+
+## Software Requirements:
+
 ### MATLAB Toolboxes: 
 In order to run the code in the repository, it is necessary to install the following MATLAB Toolboxes:
 * Signal Processing Toolbox
@@ -29,12 +39,6 @@ In order to run the code in the repository, it is necessary to install the follo
 * Communications Toolbox
 * Fixed-Point Designer
 * Statistics and Machine Learning Toolbox
-
-### Main Steps:
-* Step 1: create_chirp.m: choose what type of chirp signal to create, saves .wav file
-* Step 2: cross_correlate.m: select audio file from audio folder and extract user-influenced signal from recording, creates profile
-* Step 3: feature_extraction.m: given user profile, calculate the features, saves user data into profile
-* Step 4: learning.m: compiles all desired profiles into one data structure for Classification Learner's Application
 
 ### Classification Learners Application
 * In MATLAB, open the APPS tab at the top of the screen
