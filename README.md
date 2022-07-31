@@ -25,7 +25,7 @@ Hand structure-based mobile authentication is a viable alternative to current mo
 * trifbank.m: used by mfcc.m
 * vec2frames.m: used by mfcc.m
 
-### MATLAB Programs:
+### Main Steps:
 * Step 1: create_chirp.m: choose what type of chirp signal to create, saves .wav file
 * Step 2: cross_correlate.m: select audio file from audio folder and extract user-influenced signal from recording, creates profile
 * Step 3: feature_extraction.m: given user profile, calculate the features, saves user data into profile
