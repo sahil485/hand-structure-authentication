@@ -1,4 +1,4 @@
-# A Hand Structure-Based Mobile Authentication Solution to the Security-Reliability Trade-off
+# "A Hand Structure-Based Mobile Authentication Solution to the Security-Reliability Trade-off"
 
 # Authors: Sahil Chatiwala, Reva Hajarnis, Alexei Korolev, Danielle Park, David Shenkerman, Dr. Yingying Chen, and Yilin Yang (PhD Student)
 
