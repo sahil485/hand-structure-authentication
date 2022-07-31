@@ -14,28 +14,18 @@ for i=1:1:5
                 
             try
                 file = load(file_name);
-                disp(file)
-                
-%                 samples = file.person.samples;
-%                 disp("work 2")
-%                 config = gcf;
-%                 disp("work 3")
-%                 figure; plot(samples);
-%                 disp("work 4")
-%                 exportgraphics(config, strcat('graphs/',people(k), '/', directions(j), '-', string(numbers(i), '.png')));
-                
+                disp(x.samples)
+                figure('Name', strcat(people(k), "/", directions(j), "-", numbers(i))); plot(x);
+
+            
+                f = gcf;
+            
+                % Requires R2020a or later
+                exportgraphics(f,strcat('graphs/',people(k), '-', directions(j), '-', string(numbers(i)), '.png'),'Resolution',300)
 
             catch
                 disp(strcat("Failed for ", people(k), " ", directions(j), " ", numbers(i)));
             end
-%             disp(x.samples)
-% %             figure('Name', strcat(people(k), "/", directions(j), "-", numbers(i))); plot(x);
-% 
-%             
-%             f = gcf;
-%             
-%             % Requires R2020a or later
-%             exportgraphics(f,strcat('graphs/',people(k), '-', directions(j), '-', string(numbers(i)), '.png'),'Resolution',300)
         end
     end
 end
