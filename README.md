@@ -34,4 +34,5 @@ Hand structure-based mobile authentication is a viable alternative to current mo
 * Start a new learning session by loading your desired workspace data (master_data created by learning.m)
 * Models were developed by experimenting with different architectures and modifying false validation costs to help the models specialize for different authentication scenarios
 
-## Authors: Sahil Chatiwala, Reva Hajarnis, Alexei Korolev, Danielle Park, David Shenkerman, Dr. Yingying Chen, and Yilin Yang (PhD Student)
+## Authors: 
+### Sahil Chatiwala, Reva Hajarnis, Alexei Korolev, Danielle Park, David Shenkerman, Dr. Yingying Chen, and Yilin Yang (PhD Student)
