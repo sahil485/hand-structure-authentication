@@ -43,7 +43,7 @@ In order to run the code in the repository, it is necessary to install the follo
 * Statistics and Machine Learning Toolbox
 
 ### Link to Existing Classification Learner Models:
- * Download an unzip the following file: https://drive.google.com/file/d/1QkFw_0h__8nd4x2uBvWdolyk5szkW49y/view?usp=sharing
+ * Download and unzip the following file: https://drive.google.com/file/d/1QkFw_0h__8nd4x2uBvWdolyk5szkW49y/view?usp=sharing
 
 ### Classification Learners Application
 * In MATLAB, open the APPS tab at the top of the screen
