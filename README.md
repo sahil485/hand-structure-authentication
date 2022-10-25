@@ -32,7 +32,7 @@ Hand structure-based mobile authentication is a viable alternative to current mo
 * Step 3: feature_extraction.m: given user profile, calculate the features, saves user data into profile
 * Step 4: learning.m: compiles all desired profiles into one data structure for Classification Learner's Application
 
-## Software Requirements:
+## Software Requirements: 
 
 ### MATLAB Toolboxes: 
 In order to run the code in the repository, it is necessary to install the following MATLAB Toolboxes:
